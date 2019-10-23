@@ -63,6 +63,7 @@
         }
 
         .container {
+            padding: 20px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -74,7 +75,7 @@
 
         .face {
             position: relative;
-            margin: 50px 0 50px 50px;
+            margin: 50px 0 50px 0;
             width: 700px;
             height: 700px;
             border-radius: 50%;
@@ -196,6 +197,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px 30px;
+            background: rgba(255,222,173, .2);
         }
 
         .mouth-dot {
@@ -237,7 +239,7 @@
         }
         .words-container {
             position: relative;
-            margin-left: 200px;
+            margin-left: 150px;
         }
         .words {
             width: 40px;
@@ -333,7 +335,7 @@
         words.style.height = '721px'
         setTimeout(function() {
             imgGif.style.opacity = 1;
-
+        
             setTimeout(function(){
                 blush1.style.opacity = 1;
                 blush1.style.backgroundColor = 'pink';
