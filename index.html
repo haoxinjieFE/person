@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+     @keyframes fair1 {
+            form {
+                transform: rotateZ(50deg)
+            }
+
+            to {
+                transform: rotateZ(40deg)
+            }
+        }
+
+        @keyframes fair2 {
+            form {
+                transform: rotateZ(30deg)
+            }
+
+            to {
+                transform: rotateZ(20deg)
+            }
+        }
+
+        @keyframes fair3 {
+            form {
+                transform: rotateZ(-10deg)
+            }
+
+            to {
+                transform: rotateZ(10deg)
+            }
+        }
+
+        @keyframes blink1 {
+            form {
+                opacity: 0;
+                visibility: hidden;
+            }
+            to {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        @keyframes blink2 {
+            form {
+                opacity: 1;
+                opacity: visible;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #f2f2f2;
+            overflow: hidden;
+        }
+
+        .face {
+            position: relative;
+            margin: 50px 0 50px 50px;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.05);
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .fair-1 {
+            position: absolute;
+            left: 250px;
+            top: -3px;
+            width: 1px;
+            height: 120px;
+            background-color: #000;
+            transform: rotateZ(30deg);
+            animation: fair1 1s linear infinite alternate;
+        }
+
+        .fair-2 {
+            position: absolute;
+            left: 350px;
+            top: -3px;
+            width: 1px;
+            height: 120px;
+            background-color: #000;
+            transform: rotateZ(0deg);
+            animation: fair2 1s linear infinite alternate;
+
+        }
+
+        .fair-3 {
+            position: absolute;
+            right: 250px;
+            top: -3px;
+            width: 1px;
+            height: 120px;
+            background-color: #000;
+            transform: rotateZ(-10deg);
+            animation: fair3 1s linear infinite alternate;
+        }
+
+        .eyes {
+            width: 400px;
+            margin: 140px auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-eye {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 1px #ccc solid;
+        }
+
+        .right-eye {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 1px #ccc solid;
+        }
+
+        .eye-inner {
+            position: absolute;
+            top: 18px;
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+
+        .eye-inner::after {
+            position: absolute;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            content: '';
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        .left-eye .eye-inner {
+            left: 27px;
+        }
+
+        .right-eye .eye-inner {
+            right: 27px;
+        }
+
+        .left-eye .eye-inner::after {
+            left: 24px;
+        }
+
+        .right-eye .eye-inner::after {
+            right: 24px;
+        }
+
+        .eye-line {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -25px;
+            margin-top: -.5px;
+            width: 50px;
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        .mouth {
+            margin: 120px auto 0 auto;
+            width: 150px;
+            height: 80px;
+            border-radius: 50%;
+            border: 1px #ccc solid;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+        }
+
+        .mouth-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+
+        .mooth {
+            margin: 0 auto 0 auto;
+            width: 200px;
+            height: 130px;
+            border-bottom: 2px #ccc solid;
+            /* border-radius: 50%; */
+            transition: all 2s linear;
+        }
+
+        .blush-1 {
+            opacity: 0;
+            position: absolute;
+            left: 86px;
+            bottom: 245px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transition: all 2s linear;
+        }
+
+        .blush-2 {
+            opacity: 0;
+            position: absolute;
+            right: 86px;
+            bottom: 245px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transition: all 2s linear;
+        }
+        .words-container {
+            position: relative;
+            margin-left: 200px;
+        }
+        .words {
+            width: 40px;
+            font-size: 40px;
+            color: bisque;
+            text-align: center;
+            height: 0;
+            transition: height 1s linear;
+            overflow: hidden;
+        }
+
+        .word-text {
+            padding-bottom: 133px;
+        }
+
+        .imgGif {
+            opacity: 0;
+            position: absolute;
+            display: block;
+            width: 100px;
+            left: 50%;
+            bottom: 0;
+            margin-left: -50px;
+            transition: opacity 1s linear .5s;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="face">
+            <div class="fair-1"></div>
+            <div class="fair-2"></div>
+            <div class="fair-3"></div>
+            <div class="eyes">
+                <div class="left-eye">
+                    <div style='display: block;' class="eye-inner"></div>
+                    <div style='display: none;' class="eye-line"></div>
+                </div>
+                <div class="right-eye">
+                    <div style='display: block;' class="eye-inner"></div>
+                    <div style='display: none;' class="eye-line"></div>
+                </div>
+            </div>
+            <div class="mouth">
+                <div class="mouth-dot"></div>
+                <div class="mouth-dot"></div>
+            </div>
+            <div class="mooth"></div>
+            <div class="blush-1"></div>
+            <div class="blush-2"></div>
+        </div>
+        <div class="words-container">
+           <div class="words"> 
+               <div class="word-text">找个时间去吃海底捞吧</div>
+        </div>
+        <img class="imgGif" src="./img.gif" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    var eyes = document.getElementsByClassName('eye-inner')
+    var eyesLine = document.getElementsByClassName('eye-line')
+    var mooth = document.getElementsByClassName('mooth')[0]
+    var blush1 = document.getElementsByClassName('blush-1')[0]
+    var blush2 = document.getElementsByClassName('blush-2')[0]
+    var imgGif = document.getElementsByClassName('imgGif')[0]
+    var words = document.getElementsByClassName('words')[0]
+    
+    
+    function bink() {
+        console.log(eyes[0].style.display, eyes[1].style.display)
+        if(eyes[0].style.display === 'none' && eyes[1].style.display === 'none') {
+            eyes[0].style.display = 'block'
+            eyes[1].style.display = 'block'
+        }else {
+            eyes[0].style.display = 'none'
+            eyes[1].style.display = 'none'
+        }
+
+        if(eyesLine[0].style.display === 'none' && eyesLine[1].style.display === 'none') {
+            eyesLine[0].style.display = 'block'
+            eyesLine[1].style.display = 'block'
+        }else {
+            eyesLine[0].style.display = 'none'
+            eyesLine[1].style.display = 'none'
+        }
+    }
+    setInterval(bink, 1000)
+
+    setTimeout(function() {
+        words.style.height = '721px'
+        setTimeout(function() {
+            imgGif.style.opacity = 1;
+
+            setTimeout(function(){
+                blush1.style.opacity = 1;
+                blush1.style.backgroundColor = 'pink';
+                blush1.style.boxShadow = '0 10px 100px 0 pink'
+                blush2.style.opacity = 1;
+                blush2.style.backgroundColor = 'pink';
+                blush2.style.boxShadow = '0 10px 100px 0 pink'
+                setTimeout(function(){
+                    mooth.style.borderRadius = '50%';
+                }, 1000)
+            }, 1000)
+        }, 2000)
+    }, 2000)
+</script>
+
+</html>
